@@ -26,6 +26,10 @@ export class Library {
   }
 
   getAvailableCopies(): Copy[] {
-    return this.copies.filter(c => c.isCopyAvailable());
+    return this.copies.filter(copy => copy.isAvailable());
+  }
+
+  findBooksByAuthor(author: Author): AbstractBook[] {
+    return this.books.filter(book => book.author === author);
   }
 }

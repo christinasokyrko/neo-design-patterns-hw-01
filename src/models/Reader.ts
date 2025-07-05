@@ -3,12 +3,23 @@ import { Copy } from "./Copy";
 export class Reader {
   private borrowedCopies: Copy[] = [];
 
-  constructor(public id: string, public name: string) {}
+  constructor(private id: string, private name: string) {}
+
+  getId(): string {
+    return this.id;
+  }
+
+  getName(): string {
+    return this.name;
+  }
+
+  getBorrowedCopies(): Copy[] {
+    return this.borrowedCopies;
+  }
 
   borrowCopy(copy: Copy): boolean {
-    if (copy.isCopyAvailable()) {
-      const success = copy.borrow();
-      if (success) {
+    if (copy.isAvailable()) {
+      if (copy.borrow()) {
         this.borrowedCopies.push(copy);
         return true;
       }
@@ -19,12 +30,8 @@ export class Reader {
   returnCopy(copy: Copy): void {
     const index = this.borrowedCopies.indexOf(copy);
     if (index !== -1) {
-      this.borrowedCopies.splice(index, 1);
       copy.return();
+      this.borrowedCopies.splice(index, 1);
     }
-  }
-
-  getBorrowedCopies(): Copy[] {
-    return this.borrowedCopies;
   }
 }

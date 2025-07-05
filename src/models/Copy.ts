@@ -1,23 +1,25 @@
 import { AbstractBook } from "./AbstractBook";
 
 export class Copy {
-  private isAvailable: boolean = true;
+  private available: boolean = true;
 
-  constructor(public book: AbstractBook) {}
+  constructor(private book: AbstractBook) {}
 
   borrow(): boolean {
-    if (this.isAvailable) {
-      this.isAvailable = false;
-      return true;
-    }
-    return false;
+    if (!this.available) return false;
+    this.available = false;
+    return true;
   }
 
   return(): void {
-    this.isAvailable = true;
+    this.available = true;
   }
 
-  isCopyAvailable(): boolean {
-    return this.isAvailable;
+  isAvailable(): boolean {
+    return this.available;
+  }
+
+  getBook(): AbstractBook {
+    return this.book;
   }
 }

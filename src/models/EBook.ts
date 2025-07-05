@@ -6,12 +6,16 @@ export class EBook extends AbstractBook {
     title: string,
     year: number,
     author: Author,
-    public link: string
+    private url: string
   ) {
     super(title, year, author);
   }
 
   getDescription(): string {
-    return `${this.title} (eBook, ${this.year}) by ${this.author.name}. Available at: ${this.link}`;
+    return `${this.title} (eBook, ${this.year}) by ${this.author.getName()}. Available at: ${this.url}`;
+  }
+
+  getUrl(): string {
+    return this.url;
   }
 }
