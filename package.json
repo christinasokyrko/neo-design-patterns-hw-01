@@ -1,0 +1,25 @@
+{
+  "name": "neo-design-patterns-hw-01",
+  "version": "1.0.0",
+  "description": "Цей репозиторій містить набір домашніх завдань для курсу \"Design Patterns\". Кожна папка або файл — це стартова реалізація певного патерну або їх комбінації, яку студент має довести до логічного завершення.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinasokyrko/neo-design-patterns-hw-01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christinasokyrko/neo-design-patterns-hw-01/issues"
+  },
+  "homepage": "https://github.com/christinasokyrko/neo-design-patterns-hw-01#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
